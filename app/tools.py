@@ -77,3 +77,20 @@ def get_lecture_summary(lecture: int) -> str:
         available = sorted(p.stem for p in (DATA_DIR / "lectures").glob("*.md"))
         return f"第{lecture}回の要点はまだありません。用意されている回: {', '.join(available)}"
     return path.read_text(encoding="utf-8")
+
+def save_learning_log(content: str) -> str:
+    """利用者が学習メモの保存を頼んだときに使う。content に保存する本文を入れる。"""
+    from uuid import uuid4
+
+    content = content.strip()
+    if not content:
+        return "学習メモが空です。保存する内容を指定してください。"
+
+    log_dir = DATA_DIR.parent / "learning_log"
+    log_dir.mkdir(exist_ok=True)
+
+    log_path = log_dir / f"learning-{uuid4().hex}.md"
+    with log_path.open("x", encoding="utf-8") as log_file:
+        log_file.write(content + "\n")
+
+    return f"学習メモを learning_log/{log_path.name} に保存しました。"
