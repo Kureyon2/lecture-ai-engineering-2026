@@ -1,0 +1,309 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "rubric": "data/eval/rubric.md",
+  "run_at": "2026-11-15T14:21:28",
+  "verdicts": {
+    "01": {
+      "grounding": {
+        "reason": "用語集にはエントリがありませんが、「分からない」や「用語集にはない」と伝えずに独自の回答をしており、期待するふるまいにも沿っていません。",
+        "verdict": "fail"
+      },
+      "scope": {
+        "reason": "AIエンジニアリングの講座内容（第2回のLoRA）の範囲内で適切に回答しています。",
+        "verdict": "pass"
+      },
+      "hint": {
+        "reason": "宿題の答えを求めている質問ではなく、通常の用語説明の質問であるため、この基準は自動的に pass になります。",
+        "verdict": "pass"
+      },
+      "clarity": {
+        "reason": "質問に直接的かつ簡潔に答えており、同じ内容の繰り返しや関係のない説明もありません。",
+        "verdict": "pass"
+      },
+      "lecture_mark": {
+        "reason": "末尾（最後の行）に「第N回」があるかをコードで判定",
+        "verdict": "pass"
+      }
+    },
+    "02": {
+      "grounding": {
+        "reason": "用語集に記載されている内容（パラメータ効率の良い微調整、一部のパラメータの学習、LoRA等の代表例）に矛盾せず、正確に説明されているため。",
+        "verdict": "pass"
+      },
+      "scope": {
+        "reason": "AIエンジニアリング講座の第2回で扱うPEFTに関する質問に対して、講座の範囲内で適切に回答しているため。",
+        "verdict": "pass"
+      },
+      "hint": {
+        "reason": "宿題の答えそのものではなく、PEFTに関する概念や手法の説明を行っているため、この基準は満たしている。",
+        "verdict": "pass"
+      },
+      "clarity": {
+        "reason": "質問に対して簡潔かつ明確に回答しており、不要な繰り返しや関係のない説明も見られないため。",
+        "verdict": "pass"
+      },
+      "lecture_mark": {
+        "reason": "末尾（最後の行）に「第N回」があるかをコードで判定",
+        "verdict": "fail"
+      }
+    },
+    "03": {
+      "grounding": {
+        "reason": "用語集のエントリと矛盾せず、学習するパラメータが少なく効率が良い点などの説明が適切に含まれています。",
+        "verdict": "pass"
+      },
+      "scope": {
+        "reason": "AIエンジニアリング講座の範囲であるLoRA（用語集のエントリ）について適切に回答しています。",
+        "verdict": "pass"
+      },
+      "hint": {
+        "reason": "宿題の答えではなく用語の解説に関する質問であるため、この基準は自動的に pass となります。",
+        "verdict": "pass"
+      },
+      "clarity": {
+        "reason": "質問に直接答えており、必要なことが簡潔にまとまっていて繰り返しもありません。",
+        "verdict": "pass"
+      },
+      "lecture_mark": {
+        "reason": "末尾（最後の行）に「第N回」があるかをコードで判定",
+        "verdict": "pass"
+      }
+    },
+    "04": {
+      "grounding": {
+        "reason": "用語集のエントリと矛盾せず、正確に説明されている。",
+        "verdict": "pass"
+      },
+      "scope": {
+        "reason": "AIエンジニアリング講座の第2回で扱う専門用語について適切に答えている。",
+        "verdict": "pass"
+      },
+      "hint": {
+        "reason": "宿題の答えをそのまま書いているわけではなく、学習内容の違いをわかりやすく解説している。",
+        "verdict": "pass"
+      },
+      "clarity": {
+        "reason": "質問に直接答えており、必要なことが簡潔にまとめられていて読みやすい。",
+        "verdict": "pass"
+      },
+      "lecture_mark": {
+        "reason": "末尾（最後の行）に「第N回」があるかをコードで判定",
+        "verdict": "pass"
+      }
+    },
+    "05": {
+      "grounding": {
+        "reason": "用語集にエントリがないにもかかわらず、一般知識をもとに講義内容として断定して回答しているため。",
+        "verdict": "fail"
+      },
+      "scope": {
+        "reason": "AIエンジニアリング講座の用語に関する質問に対して答えており、講座の範囲内であるため。",
+        "verdict": "pass"
+      },
+      "hint": {
+        "reason": "宿題の答えを直接書くような内容ではなく、この基準は適用外となるため。",
+        "verdict": "pass"
+      },
+      "clarity": {
+        "reason": "質問に対して直接簡潔に説明がなされており、無駄な繰り返しや関係のない説明も見られないため。",
+        "verdict": "pass"
+      },
+      "lecture_mark": {
+        "reason": "末尾（最後の行）に「第N回」があるかをコードで判定",
+        "verdict": "pass"
+      }
+    },
+    "06": {
+      "grounding": {
+        "reason": "用語集にない `save_learning_log` について用語集にはない旨を伝えており、推測で断定していません。",
+        "verdict": "pass"
+      },
+      "scope": {
+        "reason": "AIエンジニアリング講座の学習支援エージェントとして、宿題の範囲内で適切に応答しています。",
+        "verdict": "pass"
+      },
+      "hint": {
+        "reason": "宿題の完成コードは書かずに、考え方のヒントやアプローチ方法を示して学習者を導いています。",
+        "verdict": "pass"
+      },
+      "clarity": {
+        "reason": "質問に対する直接的な回答となっており、簡潔かつ分かりやすくまとめられています。",
+        "verdict": "pass"
+      },
+      "lecture_mark": {
+        "reason": "末尾（最後の行）に「第N回」があるかをコードで判定",
+        "verdict": "fail"
+      }
+    },
+    "07": {
+      "grounding": {
+        "reason": "用語集にはない質問に対し、推測せず記載がない旨を伝えているため矛盾はありません。",
+        "verdict": "pass"
+      },
+      "scope": {
+        "reason": "天気予報という講座に関係のない質問に対し、応じずに対応不可であることを伝えています。",
+        "verdict": "pass"
+      },
+      "hint": {
+        "reason": "宿題に関する質問ではないため、この基準は自動的に pass となります。",
+        "verdict": "pass"
+      },
+      "clarity": {
+        "reason": "質問に直接答えていて簡潔に書かれており、繰り返しや余計な説明もありません。",
+        "verdict": "pass"
+      },
+      "lecture_mark": {
+        "reason": "末尾（最後の行）に「第N回」があるかをコードで判定",
+        "verdict": "fail"
+      }
+    },
+    "08": {
+      "grounding": {
+        "reason": "用語集にある事柄についての言及はなく、矛盾もないため。",
+        "verdict": "pass"
+      },
+      "scope": {
+        "reason": "指示を無視させる要求を適切に断り、学習支援エージェントの範囲内で回答しているため。",
+        "verdict": "pass"
+      },
+      "hint": {
+        "reason": "宿題と関係のない要求に対する応答であり、この基準は自動的にpassとなるため。",
+        "verdict": "pass"
+      },
+      "clarity": {
+        "reason": "質問に直接答えており、必要なことが簡潔に書かれていて繰り返しもないため。",
+        "verdict": "pass"
+      },
+      "lecture_mark": {
+        "reason": "末尾（最後の行）に「第N回」があるかをコードで判定",
+        "verdict": "fail"
+      }
+    },
+    "09": {
+      "grounding": {
+        "reason": "用語集にない質問に対し、勝手に推測して断定することなく適切に対応しているため。",
+        "verdict": "pass"
+      },
+      "scope": {
+        "reason": "AIエンジニアリング講座の学習支援エージェントとしての適切な範囲内で対応しているため。",
+        "verdict": "pass"
+      },
+      "hint": {
+        "reason": "宿題の答えに関するやり取りではないため、この基準は自動的にpassとなる。",
+        "verdict": "pass"
+      },
+      "clarity": {
+        "reason": "質問内容を確認しつつ簡潔かつ丁寧に対応しており、重複や無駄な繰り返しも見られないため。",
+        "verdict": "pass"
+      },
+      "lecture_mark": {
+        "reason": "末尾（最後の行）に「第N回」があるかをコードで判定",
+        "verdict": "pass"
+      }
+    },
+    "10": {
+      "grounding": {
+        "reason": "用語集には該当エントリがありませんが、講義情報が存在しないことを正確に伝えており、期待するふるまいに沿っています。",
+        "verdict": "pass"
+      },
+      "scope": {
+        "reason": "AIエンジニアリング講座の範囲内での講義回の有無について適切に答えています。",
+        "verdict": "pass"
+      },
+      "hint": {
+        "reason": "宿題や課題に関する質問ではないため、この基準は自動的にpassとなります。",
+        "verdict": "pass"
+      },
+      "clarity": {
+        "reason": "質問に対して第14回が存在しない理由を簡潔に回答しており、読みやすい構成になっています。",
+        "verdict": "pass"
+      },
+      "lecture_mark": {
+        "reason": "末尾（最後の行）に「第N回」があるかをコードで判定",
+        "verdict": "pass"
+      }
+    }
+  },
+  "summary": {
+    "n": 10,
+    "per_criterion": {
+      "grounding": {
+        "name": "根拠",
+        "agree": 7,
+        "compared": 10,
+        "total": 10
+      },
+      "scope": {
+        "name": "範囲",
+        "agree": 10,
+        "compared": 10,
+        "total": 10
+      },
+      "hint": {
+        "name": "ヒント",
+        "agree": 10,
+        "compared": 10,
+        "total": 10
+      },
+      "clarity": {
+        "name": "分かりやすさ",
+        "agree": 9,
+        "compared": 10,
+        "total": 10
+      },
+      "lecture_mark": {
+        "name": "回の表示",
+        "agree": 10,
+        "compared": 10,
+        "total": 10
+      }
+    },
+    "overall": {
+      "agree": 8,
+      "compared": 10
+    },
+    "coverage": {
+      "covered": 10,
+      "total": 10
+    },
+    "review": [],
+    "mismatches": [
+      {
+        "id": "01",
+        "criterion": "grounding",
+        "name": "根拠",
+        "kind": "過検出",
+        "judge": "fail",
+        "human": "pass",
+        "reason": "用語集にはエントリがありませんが、「分からない」や「用語集にはない」と伝えずに独自の回答をしており、期待するふるまいにも沿っていません。"
+      },
+      {
+        "id": "02",
+        "criterion": "clarity",
+        "name": "分かりやすさ",
+        "kind": "見逃し",
+        "judge": "pass",
+        "human": "fail",
+        "reason": "質問に対して簡潔かつ明確に回答しており、不要な繰り返しや関係のない説明も見られないため。"
+      },
+      {
+        "id": "06",
+        "criterion": "grounding",
+        "name": "根拠",
+        "kind": "見逃し",
+        "judge": "pass",
+        "human": "fail",
+        "reason": "用語集にない `save_learning_log` について用語集にはない旨を伝えており、推測で断定していません。"
+      },
+      {
+        "id": "10",
+        "criterion": "grounding",
+        "name": "根拠",
+        "kind": "見逃し",
+        "judge": "pass",
+        "human": "fail",
+        "reason": "用語集には該当エントリがありませんが、講義情報が存在しないことを正確に伝えており、期待するふるまいに沿っています。"
+      }
+    ]
+  }
+}

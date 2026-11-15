@@ -301,19 +301,36 @@ def compare_labels(a: dict[str, dict], b: dict[str, dict], name_a: str, name_b: 
 
 
 # ---------------------------------------------------------------- 回答の生成（宿題・実装）
-def generate_answers(cases: list[dict], wait: float = 1.0) -> list[dict]:
-    """評価セットの各質問を自分のエージェント（app.agent）に投げ、回答を埋める。"""
+
+def generate_answers(
+    cases: list[dict],
+    cases_path: Path,
+    wait: float = 10.0,
+) -> list[dict]:
+    """未回答の質問だけを実行し、成功するたびに保存する。"""
     from app.agent import agent, build_model
 
     model = build_model()
-    print(f"回答を生成中 {len(cases)} 件 ", end="", flush=True)
+    remaining = sum(not case.get("answer", "").strip() for case in cases)
+    print(f"未回答 {remaining} 件を生成します。", flush=True)
+
     for case in cases:
+        if case.get("answer", "").strip():
+            print(f"#{case['id']}: 回答済みのためスキップ")
+            continue
+
+        print(f"#{case['id']}: 回答生成中...", flush=True)
         result = agent.run_sync(case["question"], model=model)
+
         case["answer"] = str(result.output)
-        print(".", end="", flush=True)
-        time.sleep(wait)
-    print()
+        write_jsonl(cases_path, cases)
+        print(f"#{case['id']}: 保存しました", flush=True)
+
+        if wait > 0:
+            time.sleep(wait)
+
     return cases
+
 
 
 # ---------------------------------------------------------------- CLI
@@ -343,7 +360,10 @@ def main(argv: list[str] | None = None) -> None:
 
     if args.generate:
         try:
-            cases = generate_answers(cases)
+            cases = generate_answers(
+                cases, args.cases,
+                wait=args.wait if args.wait > 0 else 10.0
+            )
         except ModelHTTPError as e:
             print(api_error_message(e.status_code, str(e.body)[:200]))
             raise SystemExit(1)
